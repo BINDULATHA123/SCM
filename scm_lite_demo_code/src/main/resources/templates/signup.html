@@ -1,0 +1,339 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Untitled</title>
+<link rel="stylesheet"
+	href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.1.3/css/bootstrap.min.css">
+<link rel="stylesheet"
+	href="https://cdnjs.cloudflare.com/ajax/libs/ionicons/2.0.1/css/ionicons.min.css">
+<link rel="stylesheet" href="./styles.css">
+</head>
+
+<style>
+html {
+	height: 100%;
+  }
+  body {
+	margin:0;
+	padding:0;
+	font-family: sans-serif;
+	background:url('https://haidrun.com/wp-content/uploads/haidrun_cta.jpg');
+  }
+  
+  .login-box {
+	position: absolute;
+	top: 50%;
+	left: 50%;
+	width: 400px;
+	padding: 40px;
+	transform: translate(-50%, -50%);
+	background: rgba(0, 0, 0, 0.719);
+	box-sizing: border-box;
+	box-shadow: 0 10px 10px #C3CEDA;
+	border-radius: 10px;
+  }
+  
+  .login-box h2 {
+	margin: 0 0 30px;
+	padding: 0;
+	color: #fff;
+	text-align: center;
+  }
+  
+  .login-box .user-box {
+	position: relative;
+  }
+
+  .login-box  h2{
+	font-size: 20px;
+	color: #FFCE75;
+  }
+  
+  .login-box  .head h4{
+	font-size: 16px;
+	color: #C5BBA7;
+	font-family:system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+	margin-bottom: 30px;
+  }
+
+  .login-box  .link {
+	font-size: 16px;
+	color:   #E9EEF0;
+	font-family:system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+  }
+
+  .login-box .user-box input {
+	width: 100%;
+	padding: 10px 0;
+	font-size: 16px;
+	color: #fff;
+	margin-bottom: 30px;
+	border: none;
+	border-bottom: 1px solid #fff;
+	outline: none;
+	background: transparent;
+  }
+  .login-box .user-box label {
+	position: absolute;
+	top:0;
+	left: 0;
+	padding: 10px 0;
+	font-size: 16px;
+	color: #fff;
+	pointer-events: none;
+	transition: .55s;
+  }
+  
+  .login-box .user-box input:focus ~ label,
+  .login-box .user-box input:valid ~ label {
+	top: -20px;
+	left: 0;
+	color: #03e9f4;
+	font-size: 12px;
+  }
+  
+  .login-box form button {
+	position: relative;
+	display: inline-block;
+	padding: 10px 10px;
+	background-color: #000d0e;
+	font-size: 14px;
+	text-decoration: none;
+	text-transform: uppercase;
+	color: #7697A3;
+	overflow: hidden;
+	transition: .5s;
+	margin-top: 5px;
+	letter-spacing: 4px;
+	border-radius: 10px;
+  }
+  
+  .login-box button:hover {
+	background: #03e9f4;
+	color: #fff;
+	border-radius: 5px;
+	box-shadow: 0 0 5px #170675,
+				0 0 25px #170675,
+				0 0 50px #03e9f4,
+				0 0 100px #03e9f4;
+  }
+  
+  .login-box button span {
+	position: absolute;
+	display: block;
+  }
+
+  
+  .login-box button span:nth-child(1) {
+	top: 0;
+	left: -100%;
+	width: 100%;
+	height: 2px;
+	background: linear-gradient(90deg, transparent, #03e9f4);
+	animation: btn-anim1 1s linear infinite;
+  }
+  
+  @keyframes btn-anim1 {
+	0% {
+	  left: -100%;
+	}
+	50%,100% {
+	  left: 100%;
+	}
+  }
+  
+  .login-box button span:nth-child(2) {
+	top: -100%;
+	right: 0;
+	width: 2px;
+	height: 100%;
+	background: linear-gradient(180deg, transparent, #03e9f4);
+	animation: btn-anim2 1s linear infinite;
+	animation-delay: .75s
+  }
+  
+  @keyframes btn-anim2 {
+	0% {
+	  top: -100%;
+	}
+	50%,100% {
+	  top: 100%;
+	}
+  }
+  
+  .login-box button span:nth-child(3) {
+	bottom: 0;
+	right: -100%;
+	width: 100%;
+	height: 2px;
+	background: linear-gradient(270deg, transparent, #03e9f4);
+	animation: btn-anim3 1s linear infinite;
+	animation-delay: .5s
+  }
+  
+  @keyframes btn-anim3 {
+	0% {
+	  right: -100%;
+	}
+	50%,100% {
+	  right: 100%;
+	}
+  }
+  
+  .login-box button span:nth-child(4) {
+	bottom: -100%;
+	left: 0;
+	width: 2px;
+	height: 100%;
+	background: linear-gradient(360deg, transparent, #03e9f4);
+	animation: btn-anim4 1s linear infinite;
+	animation-delay: .75s
+  }
+  
+  @keyframes btn-anim4 {
+	0% {
+	  bottom: -100%;
+	}
+	50%,100% {
+	  bottom: 100%;
+	}
+  }
+  
+  
+  .user-box .capt {
+	
+	width: 300px;
+
+	border-radius: 5px red solid;
+	position: absolute;
+	transform: translate(-50%, -50%);
+	/* top: 30%; */
+	left: 50%;
+
+  }
+  .user-box h2 {
+	margin: 0 0 30px;
+	padding: 0;
+	color: #fff;
+	text-align: center;
+  }
+  .user-box #mainCaptcha {
+	position: relative;
+	max-width: 300px;
+
+	margin: 10px;
+	padding: 5px;
+	user-select: none;
+	text-align: center;
+	box-shadow: 0 0 20px rgba(0, 139, 253, 0.25);
+	font-size: 20px;
+  }
+
+  .user-box .capt #refresh {
+	position: relative;
+	left: 240px;
+	width: 20px;
+	height: 30px;
+	bottom: 57px;
+	background-color: transparent;
+	outline: none;
+	background-image: url("https://img.icons8.com/android/24/000000/refresh.png");
+	border: 0;
+	background-repeat: no-repeat;
+  }
+
+</style>
+
+<body
+    style="
+      color: #0d6efd;
+   
+      background-image: url('https://haidrun.com/wp-content/uploads/haidrun_cta.jpg');
+      background-repeat: no-repeat;
+      background-size: 100% 100%;
+    "
+  >
+    <div class="login-box">
+      <h2>Welcome back, if you want access portal please Sign up !</h2>
+      <p style="text-transform: capitalize;color:red" th:text="${message}"></p>
+      <form id="loginform">
+
+	<div class="alert alert-info" id="shipmentSuccess" style="display: none;"></div>
+    <div class="alert alert-danger" id="shipmentError" style="display: none;"></div>
+	
+        <div class="user-box">
+          <input type="text"  name="username" required>
+          <label>Enter Username</label>
+        </div>
+
+       
+        <div class="user-box">
+          <input type="text" name="email" required >
+          <label>Enter Email</label>
+        </div>
+          <div class="user-box">
+          <input type="password" name="password" required >
+          <label>Enter password</label>
+        </div>
+        
+         <button type="submit" id="login1" onclick="changeColor()">Signup</button>
+            <div class="alert alert-info" id="signupSuccess" style="display: none;"></div>
+            <div class="alert alert-danger" id="signupError" style="display: none;"></div>
+        <div class="link"> Already have an account ?<a href="/login"> Login</a></div>
+
+
+      </form>
+    </div>
+	<!-- Section: Design Block -->
+	<script
+		src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+	<script
+		src="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.1.3/js/bootstrap.bundle.min.js"></script>
+		
+		<script>
+		 function changeColor() {
+
+
+            const thisForm = document.getElementById('loginform');
+            
+            var myHeaders = new Headers();
+			myHeaders.append("Content-Type", "application/json");
+			const formData = new FormData(thisForm).entries();
+			var raw = JSON.stringify(Object.fromEntries(formData));
+		
+			var requestOptions = {
+		  		method: 'POST',
+		  headers: myHeaders,
+		  		
+		  		body: raw,
+		  		redirect: 'follow'
+			};	
+			
+			thisForm.addEventListener('submit', function (e) {
+				e.preventDefault();
+				fetch("http://localhost:8080/signup", requestOptions)
+				  .then(response => response.text())
+				  .then(result => {
+				  		console.log(result)
+				  		if(result.includes("Exists")){
+							document.getElementById('signupSuccess').style.display = "none";
+							document.getElementById('signupError').style.display = "block";
+							document.getElementById('signupError').innerText = result;
+							thisForm.reset();
+						}	
+				  		else{
+							document.getElementById('signupError').style.display = "none";
+							document.getElementById('signupSuccess').style.display = "block";
+							document.getElementById('signupSuccess').innerText = result;
+							thisForm.reset();
+						}
+				  		})
+				  .catch(error => console.log('error', error));
+			});   
+		         
+}
+		</script>
+</body>
