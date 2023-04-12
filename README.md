@@ -26,6 +26,8 @@ Docker steps
    
 4. Using docker compose type this command
     docker-compose up
+    
+    
 Instance Details
 ================
 1. Actually we are free tier instance 30gb rom and 1gb ram i.e 1 gb ram is not supporting to start the kafka so we are swapping the rom to ram
