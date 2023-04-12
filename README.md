@@ -26,4 +26,12 @@ Docker steps
    
 4. Using docker compose type this command
     docker-compose up
-
+Instance Details
+================
+1. Actually we are free tier instance 30gb rom and 1gb ram i.e 1 gb ram is not supporting to start the kafka so we are swapping the rom to ram
+step1:sudo dd if=/dev/root of=/swap_file bs=2G count=1
+step2:sudo fallocate -l 2G /swap_file
+step3:sudo chmod 600 /swap_file
+step4:sudo mkswap /swap_file
+step5:sudo swapon /swap_file
+step6: CHECK   free -m
