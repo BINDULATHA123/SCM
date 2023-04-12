@@ -6,8 +6,8 @@ import time
 import random
 
 PORT = 12345
-SERVER = socket.gethostbyname(socket.gethostname())
-# SERVER = ""
+#SERVER = socket.gethostbyname(socket.gethostname())
+SERVER = ""
 print(SERVER)
 ADDR = (SERVER, PORT)
 FORMAT = 'utf-8'
